@@ -1,0 +1,19 @@
+.Nav{
+  position: absolute;
+  right: -20px;
+  width: 100px;
+  height: 120px;
+  border: 3px solid blue;
+}
+
+.task-form{
+  width: 800px;
+  height: 500px;
+
+  position:absolute;
+  left:0; right:0;
+  top:0; bottom:0;
+  margin:auto;
+
+  border-radius: 1rem;
+}

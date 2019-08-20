@@ -1,0 +1,86 @@
+#login{
+    background-color: #3580bd;
+    height: 100vh;
+}
+#login-box{
+    width: 450px;
+    height: 350px;
+    background-color:#dbdbdb;
+
+    position:absolute;
+    left:0; right:0;
+    top:0; bottom:0;
+    margin:auto;
+
+    border-radius: 1rem;
+}
+
+#forgot-password-box{
+    width: 450px;
+    height: 250px;
+    background-color:#dbdbdb;
+
+    position:absolute;
+    left:0; right:0;
+    top:0; bottom:0;
+    margin:auto;
+
+    border-radius: 1rem;
+}
+
+#signup-box{
+    width: 550px;
+    height: 550px;
+    background-color:#dbdbdb;
+
+    position:absolute;
+    left:0; right:0;
+    top:0; bottom:0;
+    margin:auto;
+
+    border-radius: 1rem;
+}
+
+#forget-password-box{
+    width: 550px;
+    height: 330px;
+    background-color:#dbdbdb;
+
+    position:absolute;
+    left:0; right:0;
+    top:0; bottom:0;
+    margin:auto;
+
+    border-radius: 1rem;
+}
+
+.text-color{
+    color: black;
+}
+
+.navbar-light .navbar-brand{
+    color: white;
+}
+
+.navbar-light .navbar-nav .nav-link{
+    color: #f0f2f5;
+}
+
+.nav-link{
+    color: #f0f2f5;
+}
+
+.btn-primary{
+    color:white;
+}
+
+.submit{
+   color: white;
+   width: 150px;
+}
+
+.form-heading{
+    padding: 1rem;
+    font-family: Verdana;
+}
+
