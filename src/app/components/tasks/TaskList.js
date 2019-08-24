@@ -2,7 +2,7 @@ import React from 'react';
 import { Table } from 'react-bootstrap';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-
+import { getUserId } from '../../helpers/session';
 import { getTaskList } from '../../actions/task';
 
 class TaskList extends React.Component {
@@ -11,7 +11,9 @@ class TaskList extends React.Component {
         super(props);
     }
 
-    componentDidMount() { this.props.actions.getTaskList(); }
+    componentDidMount() {
+        this.props.actions.getTaskList(getUserId());
+    }
 
     render() {
         return (
@@ -20,7 +22,7 @@ class TaskList extends React.Component {
                     <thead>
                         <tr>
                             <td>S.no</td>
-                            <td>Task Date</td>
+                            <td>Task Name</td>
                             <td>Task Details</td>
                             <td>Email</td>
                             <td>Phone Number</td>
@@ -33,7 +35,7 @@ class TaskList extends React.Component {
                             this.props.taskList.map((task) => {
                                 return <tr>
                                     <td>{task.task_id}</td>
-                                    <td>{task.task_time}</td>
+                                    <td>{task.task_name}</td>
                                     <td>{task.task_details}</td>
                                     <td>{task.task_email}</td>
                                     <td>{task.task_phone}</td>

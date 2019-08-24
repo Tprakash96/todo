@@ -15,8 +15,8 @@ export const createTask = (params, history) => dispatch => {
     });
 }
 
-export const getTaskList = () => dispatch => {
-    defaultAgent.post('/task/list').then(res => {
+export const getTaskList = (userId) => dispatch => {
+    defaultAgent.post('/task/list', { userId: userId }).then(res => {
         const data = res.data;
         dispatch(taskList(data));
     }).catch(ex => {

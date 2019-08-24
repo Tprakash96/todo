@@ -3,11 +3,10 @@ import { Form, Button } from 'react-bootstrap';
 import Datetime from 'react-datetime';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-
 import { FormValidator } from '../../helpers/FormValidator';
 import { Validator } from '../widgets/Validator';
 import { createTask } from '../../actions/task';
-
+import { getUserId } from '../../helpers/session';
 import '../../../assets/css/App.css';
 import "../../../assets/css/react-datetime.css";
 
@@ -78,7 +77,6 @@ class TaskForm extends React.Component {
     handleSubmit() {
         const validation = this.validator.validate(this.state);
         this.setState({ validation });
-
         if (validation.isValid) {
             const { taskName, taskDetails, email, phoneNumber, time } = this.state;
             const params = {
@@ -86,7 +84,8 @@ class TaskForm extends React.Component {
                 'taskDetails': taskDetails,
                 'email': email,
                 'phoneNumber': phoneNumber,
-                'time': time
+                'time': time,
+                'userId': getUserId(),
             }
             this.props.actions.createTask(params, this.props.history);
         }
@@ -147,7 +146,11 @@ class TaskForm extends React.Component {
     }
 }
 
+const mapStateToProps = state => ({
+    userInfo: state.Users.userInfo,
+});
+
 const mapDispatchToProps = dispatch =>
     ({ actions: bindActionCreators({ createTask }, dispatch) });
 
-export default connect(null, mapDispatchToProps)(TaskForm);
+export default connect(mapStateToProps, mapDispatchToProps)(TaskForm);

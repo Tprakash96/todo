@@ -8,10 +8,9 @@ import Header from '../components/layout/Header';
 
 class Home extends React.Component {
     render() {
-        console.log(this.props.match.path);
         return (
             <div>
-                <Header path={this.props.match}></Header>
+                <Header path={this.props.match.path} history={this.props.history}></Header>
                 <Route exact path={`${this.props.match.path}/task`} component={Task} />
                 <Route exact path={`${this.props.match.path}/task/create`} component={TaskForm} />
             </div>
